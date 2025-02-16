@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colocando mão na massa</title>
+    <style>
+      body {
+        font: normal 30pt Arial;
+        background-color: aquamarine;
+        display: flex;               /* Ativa o Flexbox */
+        justify-content: center;     /* Centraliza horizontalmente */
+        align-items: center;         /* Centraliza verticalmente */
+        height: 100vh;               /* Ocupa toda a altura da tela */
+        margin: 0;                   /* Remove a margem padrão do body */
+      }
+
+      .conteiner {
+        text-align: 20;          /* Centraliza o conteúdo dentro da div */
+        background-color: white;
+        padding: 20px;
+        border-radius: 26px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+      
+      #mostra {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 24pt;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="conteiner">
+      <div name="contas">
+        <input type="number" name="num1" id="txtn1" />
+        + soma +
+        <input type="number" name="num2" id="txtn2" />
+        <input type="button" value="Somar" onclick="soma()" />
+        <div id="mostra">Resultado</div>
+      </div>
+    </div>
+
+    <script>
+      function soma() {
+        var numero1 = document.getElementById("txtn1");
+        var numero2 = document.getElementById("txtn2");
+        n1 = Number(numero1.value);
+        n2 = Number(numero2.value);
+        s = n1 + n2;
+        var mostra_na_tela = document.getElementById("mostra");
+        mostra_na_tela.innerHTML = s;
+      }
+    </script>
+  </body>
+</html>

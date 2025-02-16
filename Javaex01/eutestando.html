@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eu aprensendo</title>
+    <style>
+      body {
+        background: rgb(81, 171, 171);
+        font: normal 30pt Arial;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      h1 {
+        font: normal 20pt Arial;
+        color: white;
+      }
+
+      .conteiner {
+        text-align: 20;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="conteiner">
+      <h1>Coloque o peso dos jogadores</h1>
+      <input type="number" name="peso" id="peso" />
+      <input type="button" value="Verificar" onclick="calcular()" />
+      <div id="resposta">Resultado</div>
+    </div>
+    <script>
+      function campeao() {
+        let pesoS = Number(document.getElementById("peso"));
+        let peso_numero = Number(peso.value);
+        if (peso_numero < 50) {
+          return "Campeão é peso pena";
+        } else if (peso_numero <= 60) {
+          return "filha da puta";
+        } else if (peso_numero <= 70) {
+          return "Meu codigo funcionou filhda da outaaa";
+        } else {
+          return "Ta a cima seu pal no cu";
+        }
+      }
+      function calcular() {
+        var x = campeao();
+        var peso = document.getElementById("peso");
+        var peso_number = Number(peso.value);
+        var resultado = document.getElementById("resposta");
+        resultado.innerHTML = x;
+      }
+    </script>
+  </body>
+</html>
