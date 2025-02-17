@@ -33,20 +33,21 @@
     </div>
     <script>
       function campeao() {
-        let pesoS = Number(document.getElementById("peso"));
-        let peso_numero = Number(peso.value);
+        let pesoS = Number(document.getElementById("peso")); // let só pode ser modificado dentro desse escopo
+        let peso_numero = Number(peso.value); // Recebe e transforma o numero como int para ser manipulado
         if (peso_numero < 50) {
           return "Campeão é peso pena";
         } else if (peso_numero <= 60) {
-          return "filha da puta";
+          return "Peso medio";
         } else if (peso_numero <= 70) {
-          return "Meu codigo funcionou filhda da outaaa";
+          return "Peso pesado";
         } else {
-          return "Ta a cima seu pal no cu";
-        }
+          return "Acima de toda a expectativa vai ter que fazer sumo";
+        } // Fazendo essa função para fazer o chamado dela em outra função para ser resolvido o proble para chehar na outra
+
       }
       function calcular() {
-        var x = campeao();
+        var x = campeao(); 
         var peso = document.getElementById("peso");
         var peso_number = Number(peso.value);
         var resultado = document.getElementById("resposta");
