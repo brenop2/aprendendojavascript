@@ -7,14 +7,41 @@
     <style>
         body {
             background-color: rgb(109, 202, 202);
+        }
+        .botões {
+            font: 20pt;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            display: flex;
 
         }
         
     </style>
 </head>
-<body>
-    <il><input type="button" value="Pedra" ></il>
-    <il><input type="button" value="Papel" ></il>
-    <il><input type="button" value="Tesoura" ></il>
+<body><div class="botões">
+    <il><input type="button" onclick="clicar()" value="Pedra"  name="Pedra" id="Pedra"></il>
+    <il><input type="button" onclick="clicar()" value="Papel"  name="Papel" id="Papel"></il>
+    <il><input type="button" onclick="clicar()" value="Tesoura" name="Tesoura" id="Tesoura" ></il>
+</div>
+
+<script>
+    var pedra = document.getElementById('Pedra')
+    var Papel = document.getElementById('Papel')
+    var Tesoura = document.getElementById('Tesoura')
+    let Matriz_de_jogada = [
+        ["Empate","Computador","Jogador"], // Pedra
+    ["Jogador","Empate","Computador"], // Papel
+    ["Computador","Jogador","Empate"]  // Tesoura
+    ]
+    function opções () {
+        if ()
+
+        
+    }
+    function clicar() {
+
+    }
+</script>
 </body>
 </html>
