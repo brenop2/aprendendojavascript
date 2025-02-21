@@ -1,47 +1,82 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        body {
-            background-color: rgb(109, 202, 202);
-        }
-        .botões {
-            font: 20pt;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            display: flex;
-
-        }
-        
+      body {
+        background-color: rgb(109, 202, 202);
+      }
+      .botões {
+        font: 20pt;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        display: flex;
+      }
     </style>
-</head>
-<body><div class="botões">
-    <il><input type="button" onclick="clicar()" value="Pedra"  name="Pedra" id="Pedra"></il>
-    <il><input type="button" onclick="clicar()" value="Papel"  name="Papel" id="Papel"></il>
-    <il><input type="button" onclick="clicar()" value="Tesoura" name="Tesoura" id="Tesoura" ></il>
-</div>
+  </head>
+  <body>
+    <div class="botões">
+      <il
+        ><input
+          type="button"
+          onclick="clicar()"
+          value="Pedra"
+          name="Pedra"
+          id="Pedra"
+      /></il>
+      <il
+        ><input
+          type="button"
+          onclick="clicar()"
+          value="Papel"
+          name="Papel"
+          id="Papel"
+      /></il>
+      <il
+        ><input
+          type="button"
+          onclick="clicar()"
+          value="Tesoura"
+          name="Tesoura"
+          id="Tesoura"
+      /></il>
+      <ul>
+        <div id="resposta">Resultado</div>
+      </ul>
+    </div>
 
-<script>
-    var pedra = document.getElementById('Pedra')
-    var Papel = document.getElementById('Papel')
-    var Tesoura = document.getElementById('Tesoura')
-    let Matriz_de_jogada = [
-        ["Empate","Computador","Jogador"], // Pedra
-    ["Jogador","Empate","Computador"], // Papel
-    ["Computador","Jogador","Empate"]  // Tesoura
-    ]
-    function opções () {
-        if ()
+    <script>
+      let Matriz_de_jogada = [
+        ["Empate", "Computador", "Jogador"], // Pedra
+        ["Jogador", "Empate", "Computador"], // Papel
+        ["Computador", "Jogador", "Empate"], // Tesoura
+      ];
+      function opção() {
+        var Pedra = document.getElementById("Pedra");
+        var Papel = document.getElementById("Papel");
+        var Tesoura = document.getElementById("Tesoura");
 
-        
-    }
-    function clicar() {
+        Pedra = "Pedra";
+        Papel = "Papel";
+        Tesoura = "Tesoura";
+      }
 
-    }
-</script>
-</body>
+      function escolha_para_o_indice(opção) {
+        if (opção == "Pedra") {
+          return 0;
+        } else if (opção == "Papel") {
+          return 1;
+        } else if (opção == "Tesoura") {
+          return 2;
+        } else {
+          return -1;
+        }
+      }
+      var resposta = document.getElementById("resposta");
+      resposta.innerHTML = escolha_para_o_indice;
+    </script>
+  </body>
 </html>
