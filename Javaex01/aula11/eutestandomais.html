@@ -3,50 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Jokenpô</title>
     <style>
       body {
-        background-color: rgb(109, 202, 202);
+        background-color: rgb(109, 202, 202); /*defini Cor de fundo da pagina */
+        text-align: center; /* Alinha os textos para o centro da pagina */
       }
-      .botões {
-        font: 20pt;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        display: flex;
+      .botoes {
+        display: flex; /* Centraliza para o meio da tela os botoes */
+        justify-content: center; /* Define um padrão para todos os botões */
+        gap: 20px; /* Cria um espaçamento para os elementos filhos/botões */
+        margin-top: 50px; /* uma margem de 50 pixels */
+      }
+      #resposta {
+        margin-top: 20px; /* Cria uma margem */
+        font-size: 20px; /* Almenta o tamanho da letra */
+        font-weight: bold; /* Deixa a letra em negrito */
       }
     </style>
   </head>
   <body>
-    <div class="botões">
-      <il
-        ><input
-          type="button"
-          onclick="clicar()"
-          value="Pedra"
-          name="Pedra"
-          id="Pedra"
-      /></il>
-      <il
-        ><input
-          type="button"
-          onclick="clicar()"
-          value="Papel"
-          name="Papel"
-          id="Papel"
-      /></il>
-      <il
-        ><input
-          type="button"
-          onclick="clicar()"
-          value="Tesoura"
-          name="Tesoura"
-          id="Tesoura"
-      /></il>
-      <ul>
-        <div id="resposta">Resultado</div>
-      </ul>
+    <h1>Jokenpô</h1>
+    <div class="botoes">
+      <button onclick="opcao_button('Pedra')">Pedra</button>
+      <button onclick="opcao_button('Papel')">Papel</button>
+      <button onclick="opcao_button('Tesoura')">Tesoura</button>
     </div>
+    <div id="resposta">Escolha uma opção</div>
 
     <script>
       let Matriz_de_jogada = [
@@ -54,29 +37,23 @@
         ["Jogador", "Empate", "Computador"], // Papel
         ["Computador", "Jogador", "Empate"], // Tesoura
       ];
-      function opção() {
-        var Pedra = document.getElementById("Pedra");
-        var Papel = document.getElementById("Papel");
-        var Tesoura = document.getElementById("Tesoura");
 
-        Pedra = "Pedra";
-        Papel = "Papel";
-        Tesoura = "Tesoura";
+      function opcao_button(opcaoJogador) {
+        // Cria uma função que recebe a opção do usuario
+        let opcoes = ["Pedra", "Papel", "Tesoura"]; // Cria uma variavel que pode ser modificada dentro do scopo
+        let resultado = Matriz_de_jogada[jogadorIndex][computadorIndex]; // Puxa a matriz e os indices que a jogada vai ter
+
+        document.getElementById(
+          "resposta"
+        ).innerText = `Você escolheu ${opcaoJogador}, Computador escolheu ${escolhaComputador}. Resultado: ${resultado}`;
+        // Variavel chamada para verificar se a resposta esta correta
       }
 
-      function escolha_para_o_indice(opção) {
-        if (opção == "Pedra") {
-          return 0;
-        } else if (opção == "Papel") {
-          return 1;
-        } else if (opção == "Tesoura") {
-          return 2;
-        } else {
-          return -1;
-        }
+      function escolha_para_o_indice(opcao) {
+        // Função criada
+        let mapa = { Pedra: 0, Papel: 1, Tesoura: 2 }; // Uma variavel lista criada para caso a resposta seja uma das jogadas
+        return mapa[opcao] ?? -1; // cria um retorno conforme selecionado maniopulando a lista e caso ??/se não recebe -1
       }
-      var resposta = document.getElementById("resposta");
-      resposta.innerHTML = escolha_para_o_indice;
     </script>
   </body>
 </html>
